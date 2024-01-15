@@ -60,6 +60,6 @@ class FileStorage:
         if obj is None:
             pass
         else:
-            for key, value in FileStorage.__objects.items():
+            for key, value in FileStorage.__objects.copy().items():
                 if value == obj:
                     del FileStorage.__objects[key]
