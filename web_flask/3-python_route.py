@@ -31,6 +31,7 @@ def c(text):
 
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
+    """Estable un valor por defecto a la variable"""
     if "_" in text:
         text = text.replace("_", " ")
         return ("Python {}".format(escape(text)))
