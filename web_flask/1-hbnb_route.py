@@ -11,6 +11,7 @@ def home():
     """Esta funcion define la ruta home"""
     return ("Hello HBNB!")
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """Esta funcion define la ruta /hbnb"""
