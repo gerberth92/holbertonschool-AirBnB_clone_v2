@@ -27,7 +27,7 @@ def c(text):
     return ("C {}".format(escape(text)))
 
 
-@app.route("/python", defaults={'text':'is cool'}, strict_slashes=False)
+@app.route("/python", defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def python(text):
     """Establece un valor por defecto a la variable"""
