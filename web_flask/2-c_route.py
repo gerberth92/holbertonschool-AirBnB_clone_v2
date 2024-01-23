@@ -18,6 +18,7 @@ def hbnb():
     """Esta funcion define la ruta /hbnb"""
     return ("HBNB")
 
+
 @app.route("/c/<text>", strict_slashes=False)
 def c(text):
     """Captura una string ingresada por el usuario"""
