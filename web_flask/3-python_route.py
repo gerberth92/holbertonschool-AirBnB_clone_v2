@@ -24,17 +24,16 @@ def c(text):
     """Captura una string ingresada por el usuario"""
     if "_" in text:
         text = text.replace("_", " ")
-        return ("C {}".format(escape(text)))
-    else:
-        return ("C {}".format(escape(text)))
+    return ("C {}".format(escape(text)))
 
 
+@app.route("/python", defaults={'text':'is cool'}, strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def python(text="is cool"):
-    """Estable un valor por defecto a la variable"""
+def python(text):
+    """Establece un valor por defecto a la variable"""
     if "_" in text:
         text = text.replace("_", " ")
-        return ("Python {}".format(escape(text)))
+    return ("Python {}".format(escape(text)))
 
 
 if __name__ == "__main__":
