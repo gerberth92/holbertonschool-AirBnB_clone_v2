@@ -9,6 +9,7 @@ from models import storage
 
 Base = declarative_base()
 
+
 class BaseModel:
     """A base class for all hbnb models"""
 
@@ -16,11 +17,11 @@ class BaseModel:
                 unique=True,
                 nullable=False,
                 primary_key=True)
-    
+
     created_at = Column(DateTime,
                         nullable=False,
                         default=datetime.utcnow())
-    
+
     updated_at = Column(DateTime,
                         nullable=False,
                         default=datetime.utcnow())
@@ -37,7 +38,7 @@ class BaseModel:
                     setattr(self, clave, valor)
 
             kwargs.pop("__class__", None)
-    
+
             self.updated_at = datetime.strptime(
                 kwargs.pop('updated_at', datetime.now().isoformat()),
                 '%Y-%m-%dT%H:%M:%S.%f')

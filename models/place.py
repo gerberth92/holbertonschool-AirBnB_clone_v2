@@ -42,7 +42,7 @@ class Place(BaseModel, Base):
         reviews = relationship("Review",
                                cascade="all, delete-orphan",
                                backref="place")
-        
+
         amenities = relationship("Amenity",
                                  secondary="place_amenity",
                                  viewonly=False)
@@ -54,7 +54,7 @@ class Place(BaseModel, Base):
                 if valor.place_id == self.id:
                     lista_rev.append(valor)
             return (lista_rev)
-        
+
         @property
         def amenities(self):
             lista_ame = []
@@ -62,8 +62,8 @@ class Place(BaseModel, Base):
                 if valor.id in self.amenity_ids:
                     lista_ame.append(valor)
             return (lista_ame)
-        
+
         @amenities.setter
         def amenities(self, obj):
-            if type(obj) == Amenity:
+            if isinstance(obj, Amenity):
                 self.amenity_ids.append(obj.id)

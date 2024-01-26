@@ -13,18 +13,18 @@ class User(BaseModel, Base):
                    nullable=False)
 
     password = Column(String(128),
-                   nullable=False)
+                      nullable=False)
 
     first_name = Column(String(128),
-                   nullable=True)
+                        nullable=True)
 
     last_name = Column(String(128),
-                   nullable=True)
+                       nullable=True)
 
     places = relationship("Place",
                           cascade="all, delete-orphan",
                           backref="user")
-    
+
     reviews = relationship("Review",
-                          cascade="all, delete-orphan",
-                          backref="user")
+                           cascade="all, delete-orphan",
+                           backref="user")
