@@ -11,6 +11,7 @@ def home():
     """ Esta funsion retorna un mensaje. """
     return ("Hello HBNB!")
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     """ Esta funcion retorna un mensaje """
