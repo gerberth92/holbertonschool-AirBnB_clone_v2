@@ -25,9 +25,9 @@ def c(text):
     """ Esta funcion retorna un valor de una variable. """
 
     if '_' in text:
-        return ("{} {}". format("c", text.replace('_', ' ')))
+        return ("{} {}". format("C", text.replace('_', ' ')))
     else:
-        return ("{} {}". format("c", text))
+        return ("{} {}". format("C", text))
 
 
 if __name__ == "__main__":
